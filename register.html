@@ -2,8 +2,19 @@
 <head>
 	<link rel = "stylesheet" href = "./bootstrap-3.3.4-dist/css/bootstrap.min.css">
 	<link rel = "stylesheet" href = "./bootstrap-3.3.4-dist/css/bootstrap-theme.min.css">
-	<link rel = "stylesheet" href = "./bootstrap-3.3.4-dist/css/bootstrap.min.js">
+	<script type = "text/javascript" src = "./bootstrap-3.3.4-dist/css/bootstrap.min.js"></script>
+	<script type = "text/javascript" src = "./bootstrap-3.3.4-dist/jquery-1.11.1.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		function checkemail(){
+			var email = document.getElementById("inputEmail").value;
+			var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+			ismail= reg.test(email);
+			if (!ismail ) {
+				alert("邮箱格式不正确！");
+			}
+		}
+	</script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -11,11 +22,11 @@
 			<div class="span12">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-				<form class="form-horizontal" >
+				<form class="form-horizontal">
 					<div class="control-group">
 						<label class="control-label" for="inputEmail">邮箱</label>
 						<div class="controls">
-							<input id="inputEmail" type="text" name="Email"/>
+							<input id="inputEmail" type="text" name="Email" onblur="checkemail()"/>
 						</div>
 					</div>
 					<div class="control-group">

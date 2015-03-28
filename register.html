@@ -27,6 +27,24 @@
 				document.getElementById("samePassword").innerHTML = "密码不同";
 			}
 		}
+		function passwordstrength(){
+			var password = document.getElementById("inputPassword").value;
+			var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).*$", "g");
+			var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+			var enoughRegex = new RegExp("(?=.{6,}).*", "g");
+			if (password.length==0){
+				document.getElementById("strength").innerHTML="密码强度：（空）"
+			}
+			else if(strongRegex.test(password)){
+				document.getElementById("strength").innerHTML="密码强度：强";
+			}
+			else if(mediumRegex.test(password)){
+				document.getElementById("strength").innerHTML="密码强度：中";
+			}
+			else  {
+				document.getElementById("strength").innerHTML="密码强度：弱";
+			}
+		}
 	</script>
 </head>
 <body>
@@ -52,7 +70,8 @@
 					<div class="control-group">
 						<label class="control-label" for="inputPassword">密码</label>
 						<div class="controls">
-							<input id="inputPassword" type="password" name="Password"/>
+							<input id="inputPassword" type="password" name="inputPassword" onblur="passwordstrength()"/>
+							<span id="strength" />
 						</div>
 					</div>
 					<div class="control-group">

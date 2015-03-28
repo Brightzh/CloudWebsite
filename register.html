@@ -17,6 +17,16 @@
 				document.getElementById("checkEmail").innerHTML = "邮箱格式正确";
 			}
 		}
+		function confirmpassword(){
+			var password = document.getElementById("inputPassword").value;
+			var password_again = document.getElementById("confirmPassword").value;
+			if(password == password_again){
+				document.getElementById("samePassword").innerHTML = "密码相同";
+			}
+			else{
+				document.getElementById("samePassword").innerHTML = "密码不同";
+			}
+		}
 	</script>
 </head>
 <body>
@@ -48,7 +58,8 @@
 					<div class="control-group">
 						<label class="control-label" for="confirmPassword">确认密码</label>
 						<div class="controls">
-							<input id="confirmPassword" type="password" name="confirmPassword" />
+							<input id="confirmPassword" type="password" name="confirmPassword" onblur="confirmpassword()"/>
+							<span id="samePassword" />
 						</div>
 					</div>
 					<div class="control-group">

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head> 
+<body>
+	<div class="col-sm-12">
+   <div role="tabpanel">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist" id="myTab">
+      <li role="presentation"><a href="#Website" aria-controls="settings" role="tab" data-toggle="tab">网站组</a></li>
+      <li role="presentation"><a href="#Datamining" aria-controls="settings" role="tab" data-toggle="tab">数据挖掘组</a></li>
+      <li role="presentation"><a href="#Deeplearning" aria-controls="settings" role="tab" data-toggle="tab">深度学习组</a></li>
+      <li role="presentation"><a href="#Dragon" aria-controls="settings" role="tab" data-toggle="tab">龙哥组</a></li>
+      <li role="presentation"><a href="#Admin" aria-controls="settings" role="tab" data-toggle="tab">Admin</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class= "tab-pane active" id="Website" >
+        <p>网站组：张光耀 鲁其璠 赵宇航</p>
+      </div>
+
+      <div id="Datamining" class="tab-pane">
+        <p>数据挖掘组：周界……</p>
+      </div>
+
+      <div id="Deeplearning" class="tab-pane">
+        <p>深度学习组：代旭……</p>
+      </div>
+
+      <div id="Dragon" class="tab-pane">
+        <p>龙哥组：沈弼龙……</p>
+      </div>
+	  
+	  <div id="Admin" class="tab-pane">
+		<p>GM</p>
+	  </div>
+    </div>
+  </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $('#myTab a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      })
+    </script>
+	</div>
+</body>
+</html>
